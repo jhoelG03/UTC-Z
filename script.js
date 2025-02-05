@@ -1,175 +1,161 @@
-let questions = [
-    // Preguntas de Dragon Ball Z
-    { question: "¿Quién es el creador de Dragon Ball Z?", answers: ["Akira Toriyama", "Masashi Kishimoto", "Eiichiro Oda", "Yoshihiro Togashi"], correctAnswer: 0 },
-    { question: "¿Cómo se llama el hijo de Goku?", answers: ["Goten", "Gohan", "Trunks", "Krillin"], correctAnswer: 1 },
-    { question: "¿Quién es el rival más fuerte de Goku?", answers: ["Vegeta", "Freezer", "Cell", "Majin Buu"], correctAnswer: 1 },
-    { question: "¿En qué saga aparece el personaje Trunks?", answers: ["Saga de Freezer","Saga de los androides", "Saga de Majin Buu", "Saga de Cell"], correctAnswer: 1 },
-    { question: "¿Cómo se llama el mejor amigo de Goku?", answers: ["Piccolo", "Vegeta","Krillin", "Yamcha"], correctAnswer: 2 },
-    { question: "¿Quién destruye el planeta Vegeta?", answers: ["Freezer", "Cell", "Majin Buu", "Vegeta"], correctAnswer: 0 },
-    { question: "¿Quién es el rival principal en la saga de los androides?", answers: ["Freezer", "Vegeta","Cell",  "Goku"], correctAnswer: 2 },
-    { question: "¿En qué planeta nació Goku?", answers: ["Planeta Tierra", "Planeta Vegeta", "Planeta Namekusei", "Planeta Kaiohshin"], correctAnswer: 1 },
-    { question: "¿Quién es el maestro de Goku?", answers: ["Maestro Roshi", "King Kai", "Piccolo", "Vegeta"], correctAnswer: 0 },
-    { question: "¿Qué transformación alcanza Goku para derrotar a Freezer?", answers: ["Super Saiyan", "Kaioken", "Ultra Instinto", "Super Saiyan Blue"], correctAnswer: 0 },
-    // Preguntas de Dragon Ball Super
-    { question: "¿Cuál es el nuevo dios de la destrucción presentado en Dragon Ball Super?", answers: ["Bills", "Champa", "Quitela", "Sidra"], correctAnswer: 1 },
-    { question: "¿Cómo se llama la forma de Goku que supera al Super Saiyan Blue?", answers: ["Ultra Instinto", "Super Saiyan Dios", "Super Saiyan Rosa", "Super Saiyan"], correctAnswer: 0 },
-    { question: "¿Qué personaje se convierte en el primer Super Saiyan Dios en Dragon Ball Super?", answers: ["Goku", "Vegeta", "Gohan", "Broly"], correctAnswer: 0 },
-    { question: "¿En qué torneo luchan Goku y sus amigos en Dragon Ball Super?", answers: ["Torneo de Poder", "Torneo del Universo", "Torneo de los Dioses", "Torneo Saiyan"], correctAnswer: 0 },
-    { question: "¿Quién es el villano principal del Torneo de Poder?", answers: ["Jiren", "Hit", "Goku Black", "Zamasu Fusionado"], correctAnswer: 0 },
-    { question: "¿Cómo se llama la técnica principal de Hit en Dragon Ball Super?", answers: ["Time-Skip", "Instant Transmission", "Final Flash", "time-Cage"], correctAnswer: 0 },
-    { question: "¿Qué personaje de Dragon Ball Super posee la capacidad de congelar el tiempo?", answers: ["Hit", "Goku", "Vegeta", "Bills"], correctAnswer: 0 },
-    { question: "¿Cuál es el nombre del rival de Goku que proviene del futuro en Dragon Ball Super?", answers: ["Trunks", "Gohan", "Pan", "Cabba"], correctAnswer: 3 },
-    { question: "¿Qué transformación utiliza Vegeta en Dragon Ball Super para enfrentarse a poderosos enemigos?", answers: ["Super Saiyan Blue Evolution", "Super Saiyan Blue", "Ultra Instintot", "Super Saiyan Dios"], correctAnswer: 0 },
-    { question: "¿Quién es el dios de la destrucción del Universo 7 en Dragon Ball Super?", answers: ["Bills", "Champa", "Vados", "Whis"], correctAnswer: 0 }
+let Preguntas = [
+    { pregunta: "¿Quién es el creador de Dragon Ball Z?", respuestas: ["Akira Toriyama", "Masashi Kishimoto", "Eiichiro Oda", "Yoshihiro Togashi"], respuestaCorrecta: 0 },
+    { pregunta: "¿Cómo se llama el hijo de Goku?", respuestas: ["Goten", "Gohan", "Trunks", "Krillin"], respuestaCorrecta: 1 },
+    { pregunta: "¿Quién es el rival más fuerte de Goku?", respuestas: ["Vegeta", "Freezer", "Cell", "Majin Buu"], respuestaCorrecta: 0 },
+    { pregunta: "¿En qué saga aparece el personaje Trunks?", respuestas: ["Saga de Freezer", "Saga de los androides", "Saga de Majin Buu", "Saga de Cell"], respuestaCorrecta: 1 },
+    { pregunta: "¿Cómo se llama el mejor amigo de Goku?", respuestas: ["Piccolo", "Vegeta", "Krillin", "Yamcha"], respuestaCorrecta: 2 },
+    { pregunta: "¿Quién destruye el planeta Vegeta?", respuestas: ["Freezer", "Cell", "Majin Buu", "Vegeta"], respuestaCorrecta: 0 },
+    { pregunta: "¿Quién es el rival principal en la saga de los androides?", respuestas: ["Freezer", "Vegeta", "Cell", "Goku"], respuestaCorrecta: 2 },
+    { pregunta: "¿En qué planeta nació Goku?", respuestas: ["Planeta Tierra", "Planeta Vegeta", "Planeta Namekusei", "Planeta Kaiohshin"], respuestaCorrecta: 1 },
+    { pregunta: "¿Quién es el maestro de Goku?", respuestas: ["Maestro Roshi", "King Kai", "Piccolo", "Vegeta"], respuestaCorrecta: 0 },
+    { pregunta: "¿Qué transformación alcanza Goku para derrotar a Freezer?", respuestas: ["Super Saiyan", "Kaioken", "Ultra Instinto", "Super Saiyan Blue"], respuestaCorrecta: 0 },
+    { pregunta: "¿Cuál es el nuevo dios de la destrucción presentado en Dragon Ball Super?", respuestas: ["Bills", "Champa", "Quitela", "Sidra"], respuestaCorrecta: 0 },
+    { pregunta: "¿Cómo se llama la forma de Goku que supera al Super Saiyan Blue?", respuestas: ["Ultra Instinto", "Super Saiyan Dios", "Super Saiyan Rosa", "Super Saiyan"], respuestaCorrecta: 0 },
+    { pregunta: "¿Qué personaje se convierte en el primer Super Saiyan Dios en Dragon Ball Super?", respuestas: ["Goku", "Vegeta", "Gohan", "Broly"], respuestaCorrecta: 0 },
+    { pregunta: "¿En qué torneo luchan Goku y sus amigos en Dragon Ball Super?", respuestas: ["Torneo de Poder", "Torneo del Universo", "Torneo de los Dioses", "Torneo Saiyan"], respuestaCorrecta: 0 },
+    { pregunta: "¿Quién es el villano principal del Torneo de Poder?", respuestas: ["Jiren", "Hit", "Goku Black", "Zamasu Fusionado"], respuestaCorrecta: 0 },
+    { pregunta: "¿Cómo se llama la técnica principal de Hit en Dragon Ball Super?", respuestas: ["Time-Skip", "Instant Transmission", "Final Flash", "time-Cage"], respuestaCorrecta: 0 },
+    { pregunta: "¿Qué personaje de Dragon Ball Super posee la capacidad de congelar el tiempo?", respuestas: ["Hit", "Goku", "Vegeta", "Bills"], respuestaCorrecta: 0 },
+    { pregunta: "¿Cuál es el nombre del rival de Goku que proviene del futuro en Dragon Ball Super?", respuestas: ["Trunks", "Goku Black", "Pan", "Cabba"], respuestaCorrecta: 1 },
+    { pregunta: "¿Qué transformación utiliza Vegeta en Dragon Ball Super para enfrentarse a poderosos enemigos?", respuestas: ["Super Saiyan Blue Evolution", "Super Saiyan Blue", "Ultra Instinto", "Super Saiyan Dios"], respuestaCorrecta: 0 },
+    { pregunta: "¿Quién es el dios de la destrucción del Universo 7 en Dragon Ball Super?", respuestas: ["Bills", "Champa", "Vados", "Whis"], respuestaCorrecta: 0 }
 ];
 
-let currentQuestion = null; // Variable para almacenar la pregunta actual
-let player1Position = 0;
-let player2Position = 0;
-let currentPlayer = 1;
-// Cada jugador tiene 1 comodín disponible inicialmente
-let player1WildcardUsed = false;
-let player2WildcardUsed = false;
+let preguntaEnCurso = null; 
+let progresoJugador1 = 0;
+let progresoJugador2 = 0;
+let turnoJugador = 1;
 
-const totalQuestions = questions.length;
+let comodinUsadoJugador1 = false;
+let comodinUsadoJugador2 = false;
 
-function getRandomQuestion() {
-    return questions[Math.floor(Math.random() * questions.length)];
+const totalDePreguntas = Preguntas.length;
+
+function obtenerPreguntaAleatoria() {
+    return Preguntas[Math.floor(Math.random() * Preguntas.length)];
 }
 
-function showQuestion() {
-    // Se selecciona una pregunta y se guarda en currentQuestion
-    currentQuestion = getRandomQuestion();
-    document.getElementById("question-container").textContent = currentQuestion.question;
+function mostrarPregunta() {
+    preguntaEnCurso = obtenerPreguntaAleatoria();
+    document.getElementById("preguntas").textContent = preguntaEnCurso.pregunta;
 
-    const answersContainer = document.getElementById("answers-container");
-    answersContainer.innerHTML = "";
+    const contenedorRespuestas = document.getElementById("Respuesta");
+    contenedorRespuestas.innerHTML = "";
 
-    // Crear botones de respuesta con atributo data-index para identificarlos
-    currentQuestion.answers.forEach((answer, index) => {
-        const button = document.createElement("button");
-        button.textContent = answer;
-        button.classList.add("answer-btn");
-        button.dataset.index = index;
-        button.onclick = () => checkAnswer(index, currentQuestion.correctAnswer);
-        answersContainer.appendChild(button);
+    preguntaEnCurso.respuestas.forEach((respuesta, indice) => {
+        const boton = document.createElement("button");
+        boton.textContent = respuesta;
+        boton.classList.add("Respuesta-btn");
+        boton.dataset.indice = indice;
+        boton.onclick = () => verificarRespuesta(indice, preguntaEnCurso.respuestaCorrecta);
+        contenedorRespuestas.appendChild(boton);
     });
 
-    // Si el jugador actual no ha usado el comodín, se muestra el botón para usarlo
-    if ((currentPlayer === 1 && !player1WildcardUsed) || (currentPlayer === 2 && !player2WildcardUsed)) {
-        const wildcardButton = document.createElement("button");
-        wildcardButton.textContent = "Usar Comodín";
-        wildcardButton.classList.add("wildcard-btn");
-        wildcardButton.onclick = useWildcard;
-        answersContainer.appendChild(wildcardButton);
+    if ((turnoJugador === 1 && !comodinUsadoJugador1) || (turnoJugador === 2 && !comodinUsadoJugador2)) {
+        const botonComodin = document.createElement("button");
+        botonComodin.textContent = "Usar Comodín";
+        botonComodin.classList.add("comodin-btn");
+        botonComodin.onclick = usarComodin;
+        contenedorRespuestas.appendChild(botonComodin);
     }
 
-    highlightActivePlayer();
-    actualizarIndicadorWildcard();
+    resaltarJugadorActivo();
+    actualizarIndicadorComodin();
 }
 
-function checkAnswer(selectedIndex, correctAnswer) {
-    if (selectedIndex === correctAnswer) {
-        document.getElementById("message").textContent = "¡Correcto!";
-        advancePlayer();
+function verificarRespuesta(indiceSeleccionado, respuestaCorrecta) {
+    if (indiceSeleccionado === respuestaCorrecta) {
+        document.getElementById("mensaje").textContent = "¡Correcto!";
+        avanzarJugador();
     } else {
-        // Muestra el overlay de error a pantalla completa
         const overlay = document.getElementById("overlay");
         overlay.classList.add("show");
-        // Espera 1.5 segundos, oculta el overlay y cambia de turno
+
         setTimeout(() => {
             overlay.classList.remove("show");
-            switchPlayer();
+            cambiarTurno();
         }, 1500);
     }
 }
 
-// Función para usar el comodín: elimina dos respuestas incorrectas
-function useWildcard() {
-    document.getElementById("message").textContent = "Comodín activado: se han eliminado 2 alternativas";
-    if (currentPlayer === 1) {
-        player1WildcardUsed = true;
+function usarComodin() {
+    document.getElementById("mensaje").textContent = "Comodín activado: se han eliminado 2 alternativas";
+    if (turnoJugador === 1) {
+        comodinUsadoJugador1 = true;
     } else {
-        player2WildcardUsed = true;
+        comodinUsadoJugador2 = true;
     }
-    actualizarIndicadorWildcard();
+    actualizarIndicadorComodin();
 
-    const answersContainer = document.getElementById("answers-container");
-    // Selecciona todos los botones de respuesta (excluyendo el botón de comodín)
-    const answerButtons = Array.from(answersContainer.querySelectorAll("button.answer-btn"));
-    // Filtra los botones que no sean la respuesta correcta
-    let wrongButtons = answerButtons.filter(btn => Number(btn.dataset.index) !== currentQuestion.correctAnswer);
+    const contenedorRespuestas = document.getElementById("Respuesta");
+    const botonesRespuestas = Array.from(contenedorRespuestas.querySelectorAll("button.Respuesta-btn"));
 
-    // Si hay al menos dos botones incorrectos, elimina dos de ellos aleatoriamente
-    if (wrongButtons.length >= 2) {
-        wrongButtons.sort(() => Math.random() - 0.5);
-        wrongButtons.slice(0, 2).forEach(btn => btn.remove());
+    let respuestasIncorrectas = botonesRespuestas.filter(btn => Number(btn.dataset.indice) !== preguntaEnCurso.respuestaCorrecta);
+
+    if (respuestasIncorrectas.length >= 2) {
+        respuestasIncorrectas.sort(() => Math.random() - 0.5);
+        respuestasIncorrectas.slice(0, 2).forEach(btn => btn.remove());
     } else {
-        // Si por alguna razón hay menos de 2, elimina todos los incorrectos
-        wrongButtons.forEach(btn => btn.remove());
+        respuestasIncorrectas.forEach(btn => btn.remove());
     }
 
-    // Elimina el botón de comodín para que no se use nuevamente en la misma pregunta
-    const wildcardButton = answersContainer.querySelector("button.wildcard-btn");
-    if (wildcardButton) wildcardButton.remove();
+    const botonComodin = contenedorRespuestas.querySelector("button.comodin-btn");
+    if (botonComodin) botonComodin.remove();
 }
 
-function advancePlayer() {
-    if (currentPlayer === 1) {
-        player1Position++;
-        document.getElementById("player1-bar").style.width = (player1Position / 12) * 100 + "%";
-        if (player1Position === 12) {
-            document.getElementById("player1-message").textContent = "¡Jugador 1 ha ganado!";
-            disableGame();
+function avanzarJugador() {
+    if (turnoJugador === 1) {
+        progresoJugador1++;
+        document.getElementById("jugador1-bar").style.width = (progresoJugador1 / 12) * 100 + "%";
+        if (progresoJugador1 === 12) {
+            document.getElementById("jugador1-mensaje").textContent = "¡Jugador 1 ha ganado!";
+            deshabilitarJuego();
             return;
         }
     } else {
-        player2Position++;
-        document.getElementById("player2-bar").style.width = (player2Position / 12) * 100 + "%";
-        if (player2Position === 12) {
-            document.getElementById("player2-message").textContent = "¡Jugador 2 ha ganado!";
-            disableGame();
+        progresoJugador2++;
+        document.getElementById("jugador2-bar").style.width = (progresoJugador2 / 12) * 100 + "%";
+        if (progresoJugador2 === 12) {
+            document.getElementById("jugador2-mensaje").textContent = "¡Jugador 2 ha ganado!";
+            deshabilitarJuego();
             return;
         }
     }
-    // Reinicia el mensaje y muestra la siguiente pregunta tras 1 segundo
+
     setTimeout(() => {
-        document.getElementById("message").textContent = "";
-        showQuestion();
+        document.getElementById("mensaje").textContent = "";
+        mostrarPregunta();
     }, 1000);
 }
 
-function switchPlayer() {
-    currentPlayer = currentPlayer === 1 ? 2 : 1;
-    showQuestion();
+function cambiarTurno() {
+    turnoJugador = turnoJugador === 1 ? 2 : 1;
+    mostrarPregunta();
 }
 
-function highlightActivePlayer() {
-    document.getElementById("player1").classList.toggle("active", currentPlayer === 1);
-    document.getElementById("player2").classList.toggle("active", currentPlayer === 2);
+function resaltarJugadorActivo() {
+    document.getElementById("jugador1").classList.toggle("activo", turnoJugador === 1);
+    document.getElementById("jugador2").classList.toggle("activo", turnoJugador === 2);
 }
 
-// Actualiza el indicador de comodín en el panel de cada jugador
-function actualizarIndicadorWildcard() {
-    document.getElementById("player1-wildcard").textContent = player1WildcardUsed ? "Comodín usado" : "Comodín disponible";
-    document.getElementById("player2-wildcard").textContent = player2WildcardUsed ? "Comodín usado" : "Comodín disponible";
+function actualizarIndicadorComodin() {
+    document.getElementById("jugador1-comodin").textContent = comodinUsadoJugador1 ? "Comodín usado" : "Comodín disponible";
+    document.getElementById("jugador2-comodin").textContent = comodinUsadoJugador2 ? "Comodín usado" : "Comodín disponible";
 }
 
-function disableGame() {
-    document.querySelectorAll(".answer-btn").forEach(btn => btn.disabled = true);
-    document.querySelectorAll(".wildcard-btn").forEach(btn => btn.disabled = true);
+function deshabilitarJuego() {
+    document.querySelectorAll(".respuesta-btn").forEach(btn => btn.disabled = true);
+    document.querySelectorAll(".comodin-btn").forEach(btn => btn.disabled = true);
 }
 
-showQuestion();
+mostrarPregunta();
 
-// Controlador de musiquita
+let musica = document.getElementById("musicafondo");
 
-let audio = document.getElementById("background-music");
-
-    function toggleMusic() {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
+function alternarMusica() {
+    if (musica.paused) {
+        musica.play();
+    } else {
+        musica.pause();
     }
+}

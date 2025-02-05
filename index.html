@@ -4,44 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UT-Z</title>
-  <link rel="stylesheet" href="styles.css"
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="game-container">
+<div class="juego">
   <h1>UT-Z</h1>
-  <div id="question-container" class="question-container"></div>
-  <div id="answers-container"></div>
-  <div id="message" class="message"></div>
+  <div id="preguntas" class="preguntas"></div>
+  <div id="Respuesta"></div>
+  <div id="mensaje" class="mensaje"></div>
 
   <div class="board">
-    <div id="player1" class="player active">
+    <div id="jugador1" class="jugador activo">
       <h3>Jugador 1</h3>
-      <div id="player1-progress" class="progress">
-        <div id="player1-bar" class="player-progress"></div>
+      <div id="player1-progreso" class="progreso">
+        <div id="jugador1-bar" class="jugador-progreso"></div>
       </div>
-      <p id="player1-message"></p>
-      <p id="player1-wildcard"></p>
+      <p id="jugador1-mensaje"></p>
+      <p id="jugador1-comodin"></p>
     </div>
-    <div id="player2" class="player">
+    <div id="jugador2" class="jugador">
       <h3>Jugador 2</h3>
-      <div id="player2-progress" class="progress">
-        <div id="player2-bar" class="player-progress"></div>
+      <div id="jugador2-progreso" class="progreso">
+        <div id="jugador2-bar" class="jugador-progreso"></div>
       </div>
-      <p id="player2-message"></p>
-      <p id="player2-wildcard"></p>
+      <p id="jugador2-mensaje"></p>
+      <p id="jugador2-comodin"></p>
     </div>
   </div>
 </div>
 <!-- Mensaje de Respuesta Incorrecta -->
 <div id="overlay" class="overlay">Incorrecto</div>
 <!-- Cancion Dragon Ball-->
-<audio id="background-music" autoplay loop>
+<audio id="musicafondo" autoplay loop>
   <source src="Dragonball.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
 
-<button id="music-button" onclick="toggleMusic()">🎵 Reproducir Música</button>
+<button id="musica" onclick="alternarMusica()">🎵 Reproducir Música</button>
 
 <script src="script.js"></script>
 
